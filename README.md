@@ -21,7 +21,7 @@ if (checkForOddLength(string)) return false;
 * If the string is of `odd-length`, it returns `false` and prints that the string is not balanced.
 
 
-Provided that the string is `not empty` or of `odd-length`, it creates an `openingBrackets` array to hold all `{[(` characters that are encountered, a `earlyTermination` boolean variable initialized to `false`, and an `openBracketCount` counter initialized to `0`.  It then loops over the string input.
+Provided that the string is `not empty` or of `odd-length`, it creates an `openingBrackets` array to hold all `{[(` characters that are encountered, an `earlyTermination` boolean variable initialized to `false`, and an `openBracketCount` counter initialized to `0`.  It then loops over the string input.
 
 ```javascript
 const openingBrackets = [];
@@ -54,10 +54,10 @@ for (var i=0; i < string.length; i++) {
 For each character it loops over:
 
 * If the `openBracketCount` has exceeded half the length of the string, `earlyTermination` is set to `true` and it breaks out of the loop.
-* If the character is an `opening-bracket`, the bracket is pushed onto the `openingBrackets` array, and the `openBracketCount` is incremented by one.
+* If the character is an `opening-bracket`, the bracket is pushed onto the `openingBrackets` array, and `openBracketCount` is incremented by one.
 * If the character is a `closing-bracket`, the last bracket in the `openingBrackets` array is popped off and compared to see if it compliments the current `closing-bracket` character.
   * If the characters do match, it continues to the next character.
-  * If it doesn't match, the `earlyTermination` is set to `true` and it breaks out of the loop.
+  * If it doesn't match, `earlyTermination` is set to `true` and it breaks out of the loop.
 * If the character is a `non-bracket` character, the `earlyTermination` boolean is set to `true` and it breaks out of the loop.
 
 Upon exiting the loop, it determines whether the string input was balanced or unbalanced based on the `openingBrackets` and `earlyTermination` variables.
