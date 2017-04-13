@@ -16,9 +16,7 @@ const validateString = function(input) {
   console.log(`\nGiven string: ${input}`);
 }
 
-// Check for 0-length string or odd-length string.
-//   0-length string is automatically considered to be balanced.
-//   Odd-length string is automatically considered to be unbalanced.
+// 0-length string is automatically considered to be balanced.
 const checkForZeroLength = function(string) {
   if (string.length === 0) {
     console.log("Given 0-length string => balanced by default.");
@@ -26,6 +24,8 @@ const checkForZeroLength = function(string) {
   }
   return false;
 }
+
+// Odd-length string is automatically considered to be unbalanced.
 const checkForOddLength = function(string) {
   if (string.length%2 !== 0) {
     console.log("Given string of odd-length => unbalanced by default.");
@@ -34,26 +34,28 @@ const checkForOddLength = function(string) {
   return false;
 }
 
+// Object denoting which characters are opening brackets.
+const OPENINGBRACKETS = {
+  '[': true,
+  '{': true,
+  '(': true
+};
+
+// Object denoting which characters are closing brackets.
+const CLOSINGBRACKETS = {
+  ']': true,
+  '}': true,
+  ')': true
+};
+
 // Checks if character is an opening bracket.
 const isAnOpeningBracket = function(char) {
-  const OPENINGBRACKETS = {
-    '[': true,
-    '{': true,
-    '(': true
-  };
-
   if (OPENINGBRACKETS.hasOwnProperty(char)) return true;
   return false;
 }
 
 // Checks if character is a closing bracket.
 const isAClosingBracket = function(char) {
-  const CLOSINGBRACKETS = {
-    ']': true,
-    '}': true,
-    ')': true
-  };
-
   if (CLOSINGBRACKETS.hasOwnProperty(char)) return true;
   return false;
 }
@@ -113,13 +115,13 @@ const analyzeString = function(string) {
 
 // Allows string to be provided as command line argument.
 //   `node balanced_brackets.js <string>`
-const runAnalyzerIfCommandLineArgumentProvided = function() {
+const runStringAnalyzerIfCommandLineArgumentProvided = function() {
   if (process.argv.length > 2) {
     analyzeString(process.argv[2]);
   }
 }
 
-runAnalyzerIfCommandLineArgumentProvided();
+runStringAnalyzerIfCommandLineArgumentProvided();
 
 // Export function to be used by tests.
 module.exports = analyzeString;
