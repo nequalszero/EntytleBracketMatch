@@ -18,20 +18,18 @@ const validateString = function(input) {
 
 // 0-length string is automatically considered to be balanced.
 const checkForZeroLength = function(string) {
-  if (string.length === 0) {
+  if (zeroLength = string.length === 0) {
     console.log("Given 0-length string => balanced by default.");
-    return true;
   }
-  return false;
+  return zeroLength;
 }
 
 // Odd-length string is automatically considered to be unbalanced.
 const checkForOddLength = function(string) {
-  if (string.length%2 !== 0) {
+  if (oddLength = string.length%2 !== 0) {
     console.log("Given string of odd-length => unbalanced by default.");
-    return true;
   }
-  return false;
+  return oddLength;
 }
 
 // Object denoting which characters are opening brackets.
@@ -50,14 +48,12 @@ const CLOSINGBRACKETS = {
 
 // Checks if character is an opening bracket.
 const isAnOpeningBracket = function(char) {
-  if (OPENINGBRACKETS.hasOwnProperty(char)) return true;
-  return false;
+  return OPENINGBRACKETS.hasOwnProperty(char);
 }
 
 // Checks if character is a closing bracket.
 const isAClosingBracket = function(char) {
-  if (CLOSINGBRACKETS.hasOwnProperty(char)) return true;
-  return false;
+  return CLOSINGBRACKETS.hasOwnProperty(char)
 }
 
 
