@@ -4,8 +4,11 @@ Run `node balanced_brackets_tests.js` to see the results of various test cases.
 Run `node balanced_brackets.js <string-goes-here>` to test an individual string.
 
 ### Description
-The `analyzeString` function in `balanced_brackets.js` takes one argument as input.
+The `analyzeString` function in `balanced_brackets.js` takes one argument as input.  It expects a string consisting of only the characters `()[]{}`, and returns `true` if the string is `balanced` and `false` if it is unbalanced.
 
+For example, `([])` and `[]{}` are balanced but `([)]` and `](){` are not.
+
+### Details
 It validates that the input is of type `string`, and then does a quick check on the length of the string, checking whether the string is `empty` or of `odd-length`.
 
 ```javascript
